@@ -27,8 +27,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-delete projects/categories
 click project to see details
-filter projects with pipe
 click button to fund project
+delete projects/categories
 update projects/categories
+filter projects with pipe
