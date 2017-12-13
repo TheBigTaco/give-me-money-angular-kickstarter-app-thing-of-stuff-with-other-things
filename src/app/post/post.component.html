@@ -1,0 +1,22 @@
+<h3>Add New Post</h3>
+<div>
+  <div>
+    <label>Post Name:</label>
+    <br>
+    <input #newName>
+    <br>
+    <label>Post Desc:</label>
+    <br>
+    <input #description>
+    <br>
+    <label>Post Money:</label>
+    <br>
+    <input #money>
+    <br>
+    <label>Post End Date:</label>
+    <br>
+    <input type="date" #endDate>
+    <br>
+  </div>
+  <button type="button" (click)="submitForm(newName.value, description.value, money.value, endDate.value); goToCategoryDetails();" name="button">Add</button>
+</div>

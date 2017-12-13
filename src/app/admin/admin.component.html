@@ -1,0 +1,10 @@
+<h3>Add New Category</h3>
+<div>
+  <div>
+    <label>Category Name:</label>
+    <br>
+    <input #newName>
+    <input #description>
+  </div>
+  <button type="button" (click)="submitForm(newName.value, description.value); newName.value=''" name="button" routerLink=''>Add</button>
+</div>
