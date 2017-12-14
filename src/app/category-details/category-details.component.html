@@ -3,6 +3,6 @@
   <h1>{{(categoryToDisplay | async)?.name}}</h1>
   <p>{{(categoryToDisplay | async)?.description}}</p>
   <div *ngFor="let post of (postArray | async)">
-    <p>{{post.name}}</p>
+    <p (click)="showPostDetails(post)">{{post.name}}</p>
   </div>
 </div>

@@ -24,12 +24,16 @@ export class CategoryService {
   }
 
   getPosts(categoryId: string) {
-    this.posts = this.database.list('categories/'+ categoryId +'/projects/');
+    this.posts = this.database.list('categories/'+ categoryId +'/post/');
     return this.posts;
   }
 
   addPost(newPost: Post, categoryId: string) {
     this.getPosts(categoryId);
     this.posts.push(newPost);
+  }
+
+  getPostById(categoryId: string, postId: string) {
+    return this.database.object('categories/'+categoryId+'/post/'+postId);
   }
 }

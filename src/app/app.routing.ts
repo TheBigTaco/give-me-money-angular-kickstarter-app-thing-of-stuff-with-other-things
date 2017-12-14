@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
 import { PostComponent } from './post/post.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'categories/:cid/post',
     component: PostComponent
+  },
+  {
+    path: 'categories/:cid/post/:pid',
+    component: PostDetailsComponent
   }
 ];
 

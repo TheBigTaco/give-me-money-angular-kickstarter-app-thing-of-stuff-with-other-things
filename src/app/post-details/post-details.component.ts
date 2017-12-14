@@ -1,38 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { Category } from './../category.model';
+// import { Category } from './../category.model';
 import { CategoryService } from './../category.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Post } from './../post.model';
 
 @Component({
-  selector: 'app-category-details',
-  templateUrl: './category-details.component.html',
-  styleUrls: ['./category-details.component.scss'],
+  selector: 'app-post-details',
+  templateUrl: './post-details.component.html',
+  styleUrls: ['./post-details.component.scss'],
   providers: [CategoryService]
 })
-export class CategoryDetailsComponent implements OnInit {
+export class PostDetailsComponent implements OnInit {
   categoryId: string;
-  categoryToDisplay;
-  postArray;
+  postId: string;
+  postToDisplay;
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private categoryService: CategoryService,
+    private postService: CategoryService,
     private router: Router
   ) {}
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.categoryId = urlParameters['cid'];
+      this.postId = urlParameters['pid'];
     });
-    this.categoryToDisplay = this.categoryService.getCategoryById(this.categoryId);
-    this.postArray = this.categoryService.getPosts(this.categoryId)
+    this.postToDisplay = this.postService.getPostById(this.categoryId, this.postId);
   }
 
-  showPostDetails(post) {
-    this.router.navigate(['categories', this.categoryId, 'post', post.$key]);
-  }
 
 }
