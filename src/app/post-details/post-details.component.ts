@@ -15,6 +15,7 @@ import { Post } from './../post.model';
 export class PostDetailsComponent implements OnInit {
   categoryId: string;
   postId: string;
+
   postToDisplay;
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +31,20 @@ export class PostDetailsComponent implements OnInit {
     });
     this.postToDisplay = this.postService.getPostById(this.categoryId, this.postId);
   }
+  fund(donation) {
+    //TODO: Subscribe so that async works and we can pull data to update it
+    // donation = parseInt(donation)
+    // let theFunds = this.postService.getRaisedFunds(this.categoryId, this.postId);
+    // let increased = theFunds + donation;
+    // console.log(theFunds);
+    // console.log(increased);
+    // this.postToDisplay.update({raisedFunds: increased})
+  }
 
+  beginDeletingPost() {
+    if(confirm("are you sure you want to delete this post?")){
+      this.postToDisplay.remove();
+    }
+  }
 
 }

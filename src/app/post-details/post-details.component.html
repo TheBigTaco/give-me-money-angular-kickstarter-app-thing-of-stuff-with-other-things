@@ -1,6 +1,9 @@
 <div class="">
   <h1>{{(postToDisplay | async)?.name}}</h1>
   <p>{{(postToDisplay | async)?.description}}</p>
-  <p>{{(postToDisplay | async)?.money}}</p>
+  <p>{{(postToDisplay | async)?.raisedFunds}} out of a goal of {{(postToDisplay | async)?.money}} Raised</p>
   <p>{{(postToDisplay | async)?.endDate}}</p>
+  <!-- <input type="number" #donation>
+  <button type="button" name="button" (click)="fund(donation.value)">donate</button> -->
+  <button (click)="beginDeletingPost()">Delete Post</button>
 </div>

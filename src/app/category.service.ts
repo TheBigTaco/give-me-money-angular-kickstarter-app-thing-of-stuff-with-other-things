@@ -36,4 +36,8 @@ export class CategoryService {
   getPostById(categoryId: string, postId: string) {
     return this.database.object('categories/'+categoryId+'/post/'+postId);
   }
+
+  getRaisedFunds(categoryId: string, postId: string) {
+    return this.database.object('categories/'+categoryId+'/post/'+postId+'/raisedFunds');
+  }
 }
